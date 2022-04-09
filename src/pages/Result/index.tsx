@@ -67,9 +67,11 @@ const Result = () => {
             </>
           )}
         </StyledResultContainer>
-        <StyledCheckButton onClick={handleIgnoreCaseSensitivity}>
-          ignore case sensitivity
-        </StyledCheckButton>
+        {!error && (
+          <StyledCheckButton onClick={handleIgnoreCaseSensitivity}>
+            ignore case sensitivity
+          </StyledCheckButton>
+        )}
         <Link to="/">
           <Button>Go back</Button>
         </Link>

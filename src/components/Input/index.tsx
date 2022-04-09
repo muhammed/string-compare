@@ -7,9 +7,10 @@ interface Props {
   type?: string
   textarea?: boolean
   error?: string | undefined | null
+  onBlur?: (e: any) => void
 }
 
-const Input = ({ placeholder, onChange, type = 'text' }: Props) => {
+const Input = ({ placeholder, onChange, type = 'text', onBlur }: Props) => {
   return (
     <TextInput
       type={type}
@@ -17,6 +18,7 @@ const Input = ({ placeholder, onChange, type = 'text' }: Props) => {
       onChange={(e: any) => {
         onChange?.(e.target.value)
       }}
+      onBlur={onBlur}
     />
   )
 }

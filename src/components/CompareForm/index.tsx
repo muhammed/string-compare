@@ -37,10 +37,12 @@ const CompoareForm = () => {
         <Input
           placeholder="Your first entry"
           onChange={(value) => setFirstWord(value)}
+          onBlur={(e) => setFirstWord(e.target.value.trim())}
         />
         <Input
           placeholder="Your second entry"
           onChange={(value) => setSecondWord(value)}
+          onBlur={(e) => setSecondWord(e.target.value.trim())}
         />
         {error && <StyledErrorMessage>{error}</StyledErrorMessage>}
         <Button onClick={handleSubmit}>Check equality</Button>

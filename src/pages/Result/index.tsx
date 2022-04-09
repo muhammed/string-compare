@@ -14,7 +14,7 @@ const Result = () => {
   const [searchParams] = useSearchParams()
   const first = searchParams.get('first')
   const second = searchParams.get('second')
-  const [isEqual, setIsequal] = useState<boolean>(false)
+  const [isEqual, setIsEqual] = useState<boolean>(false)
   const [error, setError] = useState<boolean>(false)
 
   useEffect(() => {
@@ -28,9 +28,9 @@ const Result = () => {
       return
     }
     if (first?.localeCompare(second) === 0) {
-      setIsequal(true)
+      setIsEqual(true)
     } else {
-      setIsequal(false)
+      setIsEqual(false)
     }
   }
 
@@ -40,9 +40,9 @@ const Result = () => {
       return
     }
     if (first.toLowerCase().localeCompare(second.toLowerCase()) === 0) {
-      setIsequal(true)
+      setIsEqual(true)
     } else {
-      setIsequal(false)
+      setIsEqual(false)
     }
   }
 
@@ -67,7 +67,7 @@ const Result = () => {
             </>
           )}
         </StyledResultContainer>
-        {!error && (
+        {!error && !isEqual && (
           <StyledCheckButton onClick={handleIgnoreCaseSensitivity}>
             ignore case sensitivity
           </StyledCheckButton>

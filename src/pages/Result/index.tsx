@@ -53,7 +53,7 @@ const Result = () => {
           {error ? (
             <>
               <StyledIcon>☠️</StyledIcon>
-              <StyledTitle>Someting is wrong!</StyledTitle>
+              <StyledTitle>Something is wrong!</StyledTitle>
             </>
           ) : isEqual ? (
             <>
